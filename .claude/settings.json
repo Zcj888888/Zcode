@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash(git commit *)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd $PROJECT_DIR && echo \"[Pre-commit check]\" && git diff --cached --stat && echo \"\" && git diff --cached --check 2>&1 || true"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash(git commit *)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd $PROJECT_DIR && git push 2>&1 || echo \"[Auto-push failed] No upstream or network issue\""
+          }
+        ]
+      }
+    ]
+  }
+}
