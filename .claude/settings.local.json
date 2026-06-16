@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npx electron *)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(npm uninstall *)",
+      "Bash(echo \"RETCODE=$?\")",
+      "Bash(node *)",
+      "Bash(git *)",
+      "Bash(gh --version)",
+      "Bash(gh auth *)",
+      "Bash(gh repo *)"
+    ]
+  }
+}
